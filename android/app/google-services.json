@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "352136722822",
+    "project_id": "ai-radio-a6cff",
+    "storage_bucket": "ai-radio-a6cff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352136722822:android:72e426d5ef99e207a51407",
+        "android_client_info": {
+          "package_name": "com.example.ai_radio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352136722822-r4ku4apsp99bs5b948ihmrjn8a6tni8t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ai_radio",
+            "certificate_hash": "a54e4d5334582a0395d612860709928694e0bac7"
+          }
+        },
+        {
+          "client_id": "352136722822-qnm2e68701e35vph8ktei9j39pinhe0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANltKN36GpHSkqDlBQOFWHHqRCuwc8rSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352136722822-qnm2e68701e35vph8ktei9j39pinhe0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
