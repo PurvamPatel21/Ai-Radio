@@ -3,11 +3,14 @@ import 'package:ai_radio/utils/ai_util.dart';
 import 'package:alan_voice/alan_callback.dart';
 import 'package:alan_voice/alan_voice.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:velocity_x/velocity_x.dart';
+
+import '../signin.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -52,7 +55,7 @@ class _HomePageState extends State<HomePage> {
   setupAlan() {
     AlanVoice.addButton(
         "cf51101a775556a6cf6448f81dbdae882e956eca572e1d8b807a3e2338fdd0dc/stage",
-        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
+        buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT);
 
     AlanVoice.callbacks.add((command) => _handleCommand(command.data));
   }
@@ -295,7 +298,21 @@ class _HomePageState extends State<HomePage> {
                 }
               })
             ].vStack(),
-          ).pOnly(bottom: context.percentHeight * 12)
+          ).pOnly(bottom: context.percentHeight * 12),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ElevatedButton(
+                child: Text("Logout"),
+                onPressed: () {
+                  FirebaseAuth.instance.signOut().then((value) {
+                    print("Signed Out");
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SignInScreen()));
+                  });
+                }),
+          ),
         ],
         fit: StackFit.expand,
         clipBehavior: Clip.antiAlias,

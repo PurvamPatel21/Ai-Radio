@@ -1,11 +1,15 @@
 import 'package:ai_radio/pages/home_page.dart';
+import 'package:ai_radio/signin.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -17,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(fontFamily: GoogleFonts.poppins().fontFamily),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SignInScreen(),
     );
   }
 }
